@@ -35,3 +35,15 @@ output "primary_region_instance_count" {
 output "sku_settings_kind" {
   value = var.sku_settings.kind
 }
+
+output "alpha_output" {
+  value = module.alpha.random_string
+}
+
+output "bravo_output" {
+  value = module.bravo.random_string
+}
+
+output "charlie_output" {
+  value = module.charlie.random_string
+}
