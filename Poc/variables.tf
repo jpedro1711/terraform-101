@@ -1,9 +1,13 @@
+variable "environment_name" {
+  type = string
+}
+
 variable "resource_group_location" {
   default = "eastus"
 }
 
 variable "resource_group_name" {
-  default = "devops-infra-dev"
+  default = "devops-infra"
 }
 
 variable "resource_group_tags" {
