@@ -6,7 +6,12 @@ terraform {
       version = "~> 4.27.0"
     }
   }
-
+  cloud {
+    organization = "JOAOPEDRO_TEST_TERRAFORM"
+    workspaces {
+      name = "production"
+    }
+  }
   required_version = ">= 1.1.0"
 }
 
@@ -15,9 +20,9 @@ provider "azurerm" {
 }
 
 locals {
-  resource_group_name = "${var.resource_group_name}-${var.environment_name}"
+  resource_group_name   = "${var.resource_group_name}-${var.environment_name}"
   app_service_plan_name = "${var.app_service_plan_name}-${var.environment_name}"
-  app_service_name = "${var.app_service_name}-${var.environment_name}"
+  app_service_name      = "${var.app_service_name}-${var.environment_name}"
 }
 
 resource "azurerm_resource_group" "rg" {
